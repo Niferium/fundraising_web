@@ -8,9 +8,9 @@
         :root {
             --primary: #004B9B;
             --primary-dark: #004B9B;
-            --secondary: #FdB913;
-            --secondary-dark: #FdB913;
-            --light: #004B9B;
+            --secondary: #004B9B;
+            --secondary-dark: #343a40;
+            --light: #FdB913;
             --dark: #343a40;
         }
         
@@ -31,6 +31,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            z-index: 3;
         }
         
         header {
@@ -131,6 +132,28 @@
         .hero-content {
             max-width: 600px;
         }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            /* your gradient, sweetie 💫 */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+            z-index: 2;
+        }
+
         
         h1 {
             font-size: 48px;
@@ -519,11 +542,11 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <span class="logo-icon"></span> District 301-D1
+                    <span class="logo-icon"><img src="lions_logo.png" alt="icon" style="vertical-align: middle;" width="34" height="34"></span> District 301-D1
                 </div>
                 <div class="nav-links">
                     <a href="#" class="active" id="home-link" onclick="showHome()">Home</a>
-                    <a href="#" id="donate-link" onclick="showDonate()">Donate</a>
+                    <a href="donation_screen.html" id="donate-link" onclick="showDonate()">Donate</a>
                 </div>
             </nav>
         </div>
@@ -532,6 +555,8 @@
     <!-- Home Screen -->
     <div id="home-screen" class="visible">
         <section class="hero">
+            <div class="overlay"></div>
+            <img src="outreach1.jpg" alt="Hero Image" class="hero-img">
             <div class="container">
                 <div class="hero-content">
                     <h1>We Serve</h1>
@@ -568,7 +593,7 @@
                 </div>
                 <div class="causes">
                     <div class="cause-card">
-                        <img src="/api/placeholder/600/400" alt="Education Initiative" class="cause-img">
+                        <img src="activity2.jpg" alt="Education Initiative" class="cause-img">
                         <div class="cause-content">
                             <h3 class="cause-title">Education for All</h3>
                             <p>Providing quality education to underserved communities and giving children the tools they need to succeed.</p>
@@ -584,7 +609,7 @@
                     </div>
                     
                     <div class="cause-card">
-                        <img src="/api/placeholder/600/400" alt="Healthcare Initiative" class="cause-img">
+                        <img src="activity4.jpg" alt="Healthcare Initiative" class="cause-img">
                         <div class="cause-content">
                             <h3 class="cause-title">Healthcare Access</h3>
                             <p>Expanding medical services to remote areas and ensuring everyone has access to essential healthcare.</p>
@@ -600,7 +625,7 @@
                     </div>
                     
                     <div class="cause-card">
-                        <img src="/api/placeholder/600/400" alt="Environmental Initiative" class="cause-img">
+                        <img src="activity_kalinisan3.jpg" alt="Environmental Initiative" class="cause-img">
                         <div class="cause-content">
                             <h3 class="cause-title">Environmental Protection</h3>
                             <p>Preserving natural resources and implementing sustainable solutions for a healthier planet.</p>
@@ -664,24 +689,24 @@
                 </div>
                 <div class="impact-stories">
                     <div class="impact-story">
-                        <img src="/api/placeholder/600/400" alt="Success Story 1" class="impact-img">
+                        <img src="acitivity_kalinisan1.jpg" alt="Success Story 1" class="impact-img">
                         <div class="impact-content">
-                            <h3 class="impact-title">Building Wells in Drought-Affected Areas</h3>
-                            <p>Thanks to generous donors like you, we've built 15 new wells in regions suffering from severe water shortages, providing clean water to over 10,000 people.</p>
+                            <h3 class="impact-title">Mother's Hearts Network - Rodriguez Rizal</h3>
+                            <p>Celebrated the Women's Month by taking care of the environment. Launching the "Araw ng Kalinisan" - A Clean Up Drive at Phase 4 Eastwood Residences, Rodriguez Rizal.</p>
                         </div>
                     </div>
                     <div class="impact-story">
-                        <img src="/api/placeholder/600/400" alt="Success Story 2" class="impact-img">
+                        <img src="dumagat_service.jpg" alt="Success Story 2" class="impact-img">
                         <div class="impact-content">
-                            <h3 class="impact-title">New School Opens Its Doors</h3>
-                            <p>The Mountain View School project is now complete, offering quality education to 500 children who previously had to walk miles to attend classes.</p>
+                            <h3 class="impact-title">Lions Visit the dumagats</h3>
+                            <p>The Lions Club International District 301-D1 led by District Governor Marco Soriano conducted its gift giving and feeding program to the Dumagat Tribes, January 18, 2025 at Angat Dam Norzagaray, Bulacan.</p>
                         </div>
                     </div>
                     <div class="impact-story">
-                        <img src="/api/placeholder/600/400" alt="Success Story 3" class="impact-img">
+                        <img src="activities1.jpg" alt="Success Story 3" class="impact-img">
                         <div class="impact-content">
-                            <h3 class="impact-title">Mobile Health Clinics Launched</h3>
-                            <p>Our fleet of mobile clinics has provided essential healthcare services to over 5,000 people in remote villages during the first six months of operation.</p>
+                            <h3 class="impact-title">QC Bahaghari Executive Lions Club supported the 105th 1st TAS Brigade</h3>
+                            <p>Rescue Training in preparation for the Big One.</p>
                         </div>
                     </div>
                 </div>
@@ -808,7 +833,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>About Us</h3>
-                    <p>Hearts United is a non-profit organization dedicated to creating sustainable solutions for communities facing challenges around the world.</p>
+                    <p>QC Bahaghari Lions Club (District 301-D1) is an organization dedicated to creating sustainable solutions for communities facing challenges around the world.</p>
                     <div class="social-icons">
                         <a href="#"><span>📱</span></a>
                         <a href="#"><span>📘</span></a>
@@ -830,9 +855,9 @@
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li>123 Charity Lane, Helping City</li>
+                        <li>Quezon City, Philippines</li>
                         <li>Phone: (555) 123-4567</li>
-                        <li>Email: info@heartsunited.org</li>
+                        <li>Email: qcbahagharilionsclub@gmail.com</li>
                         <li>Hours: Mon-Fri 9am - 5pm</li>
                     </ul>
                 </div>
